@@ -24,11 +24,10 @@ public class ButtonExample extends JFrame implements ActionListener {
         boo.setFocusable(false);
         boo.addActionListener(this); // This adds the action listener to the button
 
-        ImageIcon icon = new ImageIcon("src\\concern.png");
         label = new JLabel(); // create an instance of the label
-        label.setBounds(210, 180, 100, 100); // This is the position of the label (x, y, width, height)
-        label.setText("WHY");
-        label.setIcon(icon);
+        label.setBounds(180, 180, 100, 100); // This is the position of the label (x, y, width, height)
+        label.setText("WHY"); // This is the text of the label
+        label.setFont(new Font("Comic Sans MS", Font.BOLD, 16)); // This is the font of the label's text and the size
         
         label.setVisible(false); // This makes the label invisible until the "boo" button is clicked
 
@@ -46,7 +45,7 @@ public class ButtonExample extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == button) {
-            System.out.println("You clicked me B^)");
+            JOptionPane.showMessageDialog(null, "You clicked the button!");
         }
         if (e.getSource() == boo) {
             label.setVisible(true);
